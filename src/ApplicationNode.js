@@ -20,7 +20,7 @@ export default class ApplicationNode extends Component {
         <Provider store={store}>
           <Router history={history}>
             <Switch>
-              <Route exact path='/' component={App} />
+              <Route path='/' component={App} />
             </Switch>
           </Router>
         </Provider>

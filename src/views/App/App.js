@@ -4,10 +4,12 @@ import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
-import {withRouter} from 'react-router-dom'
-
+import {withRouter, Router, Route, Switch} from 'react-router-dom'
+import history from '../../services/history'
 import Header from 'components/Header'
 import UserCard from 'components/UserCard'
+import Repos from 'components/Repos'
+import Events from 'components/Events'
 import {getUser} from 'actions/userActions'
 import {getRepos} from 'actions/reposActions'
 import {getEvents} from 'actions/eventsActions'
@@ -54,7 +56,25 @@ export default class App extends Component {
     return (
       <div styleName='app'>
         <Header user={user} />
-        <UserCard user={user} />
+        <Router history={history}>
+          <Switch>
+            <Route
+              exact
+              path='/'
+              component={() => <UserCard user={user} />}
+            />
+            <Route
+              exact
+              path='/repos'
+              component={() => <Repos user={user} />}
+            />
+            <Route
+              exact
+              path='/events'
+              component={() => <Events user={user} />}
+            />
+          </Switch>
+        </Router>
       </div>
     )
   }
