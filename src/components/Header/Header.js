@@ -22,11 +22,14 @@ function Header ({user}) {
           </ListItem>
         ))}
       </List>
-      <Avatar
-        alt={user.name}
-        src={user.avatar_url}
-        styleName='avatar'
-      />
+      <div styleName='avatar-wrapper'>
+        <Avatar
+          alt={user.name}
+          src={user.avatar_url}
+          styleName='avatar'
+        />
+        <p styleName='login'>{user.login}</p>
+      </div>
     </div>
   )
 }
@@ -34,7 +37,8 @@ function Header ({user}) {
 Header.propTypes = {
   user: PropTypes.shape({
     avatar_url: PropTypes.string,
-    name: PropTypes.string
+    name: PropTypes.string,
+    login: PropTypes.string
   })
 }
 

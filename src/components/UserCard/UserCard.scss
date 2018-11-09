@@ -1,0 +1,43 @@
+.user-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 600px;
+  margin: auto;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.chips {
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-name {
+  display: flex;
+  justify-content: space-between;
+}
+
+.links-wrapper {
+
+}
+
+.links-title {
+  text-align: center;
+  color: black;
+  font-weight: bold;
+}
+
+.links {
+  display: flex;
+  justify-content: space-between;
+
+  a {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    background-color: #2196f3;
+    text-decoration: none;
+    padding: 8px 16px;
+  }
+}

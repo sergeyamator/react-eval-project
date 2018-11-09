@@ -7,6 +7,7 @@ import {bindActionCreators} from 'redux'
 import {withRouter} from 'react-router-dom'
 
 import Header from 'components/Header'
+import UserCard from 'components/UserCard'
 import {getUser} from 'actions/userActions'
 import {getRepos} from 'actions/reposActions'
 import {getEvents} from 'actions/eventsActions'
@@ -48,10 +49,12 @@ export default class App extends Component {
   }
 
   render () {
-    console.log(this.props);
+    console.log(this.props)
+    const { user } = this.props
     return (
       <div styleName='app'>
-        <Header user={this.props.user} />
+        <Header user={user} />
+        <UserCard user={user} />
       </div>
     )
   }
