@@ -11,7 +11,12 @@ import {getUser} from 'actions/userActions'
 import {getRepos} from 'actions/reposActions'
 import {getEvents} from 'actions/eventsActions'
 
-const mapStateToProps = state => ({})
+const mapStateToProps = state => ({
+  user: state.user,
+  repos: state,
+  events: state
+})
+
 const mapDispatchToProps = dispatch => (bindActionCreators({
   getEvents,
   getRepos,
@@ -24,20 +29,29 @@ export default class App extends Component {
   static propTypes = {
     getEvents: PropTypes.func.isRequired,
     getRepos: PropTypes.func.isRequired,
-    getUser: PropTypes.func.isRequired
+    getUser: PropTypes.func.isRequired,
+
+    user: PropTypes.shape({
+      avatar_url: PropTypes.string,
+      bio: PropTypes.string,
+      blog: PropTypes.string,
+      events_url: PropTypes.string,
+      followers: PropTypes.number
+    })
   }
 
   componentDidMount () {
     const {getUser, getRepos, getEvents} = this.props
-
     getUser()
     getRepos()
     getEvents()
   }
+
   render () {
+    console.log(this.props);
     return (
       <div styleName='app'>
-        <Header />
+        <Header user={this.props.user} />
       </div>
     )
   }

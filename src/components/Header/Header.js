@@ -1,17 +1,41 @@
+import React from 'react'
+import PropTypes from 'prop-types'
+import List from '@material-ui/core/List'
+import ListItem from '@material-ui/core/ListItem'
+import { Link } from 'react-router-dom'
+import Avatar from '@material-ui/core/Avatar'
+
 import './header.scss'
 
-import React, {Component} from 'react'
+const menu = [
+  'Repos',
+  'Events'
+]
 
-export default class Header extends Component {
-  static propTypes = {}
-
-  state = {}
-
-  render () {
-    return (
-      <div styleName='header'>
-        <h2>Welcome to Clear Capital React!</h2>
-      </div>
-    )
-  }
+function Header ({user}) {
+  return (
+    <div styleName='header'>
+      <List styleName='list'>
+        {menu.map((item) => (
+          <ListItem key={item}>
+            <Link to={item} styleName='list__item'>{item}</Link>
+          </ListItem>
+        ))}
+      </List>
+      <Avatar
+        alt={user.name}
+        src={user.avatar_url}
+        styleName='avatar'
+      />
+    </div>
+  )
 }
+
+Header.propTypes = {
+  user: PropTypes.shape({
+    avatar_url: PropTypes.string,
+    name: PropTypes.string
+  })
+}
+
+export default Header
