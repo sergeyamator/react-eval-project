@@ -28,7 +28,7 @@ function Repos ({ repos }) {
         <TableBody>
           {repos.map(repo => {
             return (
-              <TableRow key={repo.id}>
+              <TableRow key={repo.id} styleName='row'>
                 <TableCell component='th' scope='row'>
                   {repo.name}
                 </TableCell>

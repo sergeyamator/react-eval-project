@@ -1,3 +1,17 @@
 .title {
   text-align: center;
 }
+
+.svg {
+  animation-name: scale;
+  animation-fill-mode: forwards;
+  animation-duration: 0.8s;
+  animation-delay: 0.7s;
+  transform: scale(0);
+}
+
+@keyframes scale {
+  to {
+    transform: scale(1);
+  }
+}

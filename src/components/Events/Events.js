@@ -97,7 +97,7 @@ class Events extends Component {
     return (
       <Fragment>
         <h1 styleName='title'>Events</h1>
-        <svg />
+        <div styleName='svg'><svg /></div>
       </Fragment>
     )
   }
