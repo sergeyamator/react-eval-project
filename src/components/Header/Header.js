@@ -22,14 +22,13 @@ function Header ({user}) {
           </ListItem>
         ))}
       </List>
-      <div styleName='avatar-wrapper'>
+      <Link to='/' styleName='avatar-wrapper'>
         <Avatar
           alt={user.name}
           src={user.avatar_url}
-          styleName='avatar'
         />
         <p styleName='login'>{user.login}</p>
-      </div>
+      </Link>
     </div>
   )
 }
