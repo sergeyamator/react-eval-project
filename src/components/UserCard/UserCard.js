@@ -4,7 +4,7 @@ import Card from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent'
 import Chip from '@material-ui/core/Chip'
 import Avatar from '@material-ui/core/Avatar'
-import Icon from '@material-ui/core/Icon';
+import Icon from '@material-ui/core/Icon'
 
 import './UserCard.scss'
 
