@@ -26,7 +26,7 @@ function UserCard ({ user }) {
           <Chip label={`public_gists: ${user.public_gists}`} variant='outlined' />
           <Chip label={`public_repos: ${user.public_repos}`} variant='outlined' />
         </div>
-        <div styleName='links-wrapper'>
+        <div>
           <p styleName='links-title'>Please, visit my pages</p>
           <div styleName='links'>
             <a href={user.html_url} target='_blank'>
